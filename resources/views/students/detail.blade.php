@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-header">Students <a href="{{ route('student.create') }}" class="btn btn-primary pull-right">Add Student</a></h1>
+                <h1 class="page-header">{{ $student['name'] }}</h1>
 
                 @if (session('status'))
                     <div class="alert alert-success">
@@ -12,8 +12,8 @@
                     </div>
                 @endif
 
-                @if(count($students) === 0)
-                    No students added yet!
+                @if(count($behaviors) === 0)
+                    No behaviors added yet for this student
                 @else
                     <table class="table table-bordered">
                         <thead>
@@ -25,15 +25,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($students as $student)
+                        @foreach($behaviors as $behavior)
                             <tr>
-                                <td>{{ $student['id'] }}</td>
-                                <td><a href="{{ route('student.detail', $student['id']) }}">{{ $student['name'] }}</a></td>
+                                <td>{{ $behavior['id'] }}</td>
+                                <td><a href="#">{{ $behavior['name'] }}</a></td>
                                 <td>34</td>
                                 <td>999</td>
                             </tr>
-                    @endforeach
-                        </tbody> </table>
+                        @endforeach
+                        </tbody>
+                    </table>
                 @endif
             </div>
         </div>
