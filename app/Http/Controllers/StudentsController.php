@@ -20,7 +20,7 @@ class StudentsController extends Controller
             ->where('id', $id)
             ->firstOrFail();
 
-        $behaviors = $student->behaviors();
+        $behaviors = $student->behaviors;
 
         return view('students.detail', compact('student', 'behaviors'));
     }

@@ -25,4 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/students/create', 'StudentsController@create')->name('student.create');
     Route::post('/students/create', 'StudentsController@store')->name('student.store');
     Route::get('/students/{id}', 'StudentsController@detail')->name('student.detail');
+
+    Route::get('/behavior/create/{id?}', 'BehaviorsController@create')->name('behavior.create');
+    Route::post('/behavior/create/{id?}', 'BehaviorsController@store')->name('behavior.store');
 });
