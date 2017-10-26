@@ -12,4 +12,9 @@ class Student extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function behaviors()
+    {
+        return $this->hasMany('App\Behavior');
+    }
 }
