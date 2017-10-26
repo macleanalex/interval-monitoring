@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-header">{{ $student['name'] }}</h1>
+                <h1 class="page-header">{{ $student['name'] }} <a href="{{ route('behavior.create', ['id' => $student['id']]) }}" class="btn btn-primary pull-right">Add Student</a></h1>
 
                 @if (session('status'))
                     <div class="alert alert-success">
@@ -12,7 +12,7 @@
                     </div>
                 @endif
 
-                @if(count($behaviors) === 0)
+                @if($behaviors->count() === 0)
                     No behaviors added yet for this student
                 @else
                     <table class="table table-bordered">
